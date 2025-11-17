@@ -236,10 +236,51 @@ GET /users?status=active&role=admin&sort=-created_at,name
    - Deprecation notices.
    - Support multiple versions simultaneously.
 
+## Sources
+
+- [Google API Design Guide](https://apistylebook.com/design/guidelines/google-api-design-guide#http-methods)
+- [Best practices for RESTful web API design](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+
 ## Related Patterns
 
-- [GraphQL](../graphql/README.md) - Alternative query language.
-- [gRPC](../grpc/README.md) - High-performance RPC.
-- [WebSocket](../websocket/README.md) - Real-time bidirectional.
-- [Server-Sent Events](../server-sent-events/README.md) - Server push.
-- [Webhooks](../webhook/README.md) - Event-driven notifications.
+- [GraphQL](../graphql/README.md) - Alternative query language
+- [gRPC](../grpc/README.md) - High-performance RPC
+- [WebSocket](../websocket/README.md) - Real-time bidirectional
+- [Server-Sent Events](../server-sent-events/README.md) - Server push
+- [Webhooks](../webhook/README.md) - Event-driven notifications
+
+## References & Further Reading
+
+### Foundational
+- [Architectural Styles and the Design of Network-based Software Architectures](https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm) - Roy Fielding's PhD dissertation introducing REST
+- [HTTP/1.1 Specification (RFC 7231)](https://tools.ietf.org/html/rfc7231) - HTTP semantics and content
+- [HTTP/2 Specification (RFC 7540)](https://tools.ietf.org/html/rfc7540) - Modern HTTP protocol
+
+### API Design Guidelines
+- [Microsoft REST API Guidelines](https://github.com/microsoft/api-guidelines) - Comprehensive REST API design guide
+- [Google API Design Guide](https://cloud.google.com/apis/design) - Resource-oriented API design
+- [Zalando RESTful API Guidelines](https://opensource.zalando.com/restful-api-guidelines/) - Enterprise REST best practices
+- [GitHub REST API Documentation](https://docs.github.com/en/rest) - Real-world REST API example
+
+### Specifications
+- [OpenAPI Specification](https://swagger.io/specification/) - Standard for REST API documentation
+- [JSON:API](https://jsonapi.org/) - Specification for building APIs in JSON
+- [HAL - Hypertext Application Language](http://stateless.co/hal_specification.html) - Hypermedia format
+
+### Books
+- *RESTful Web APIs* by Leonard Richardson, Mike Amundsen, and Sam Ruby
+- *REST API Design Rulebook* by Mark Masse
+- *API Design Patterns* by JJ Geewax
+- *Building Microservices* by Sam Newman (REST in microservices context)
+
+### Articles & Tutorials
+- [REST API Tutorial](https://restfulapi.net/) - Comprehensive REST concepts
+- [Best Practices for Designing a Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api) - Practical guide
+- [Richardson Maturity Model](https://martinfowler.com/articles/richardsonMaturityModel.html) - Martin Fowler on REST maturity
+
+### Tools & Testing
+- [Postman](https://www.postman.com/) - API development and testing
+- [Insomnia](https://insomnia.rest/) - REST API client
+- [Swagger/OpenAPI Tools](https://swagger.io/tools/) - API documentation and generation
+- [HTTPie](https://httpie.io/) - Command-line HTTP client
+- [cURL](https://curl.se/) - Data transfer tool

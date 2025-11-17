@@ -417,9 +417,59 @@ message User {
    - Service mesh (Istio, Linkerd).
    - Round-robin, least-connection algorithms.
 
+## Sources
+
+- [What is gRPC?](https://grpc.io/docs/what-is-grpc/)
+
 ## Related Patterns
 
-- [REST API](../rest-api/README.md) - HTTP-based API design.
-- [WebSocket](../websocket/README.md) - Bidirectional persistent connection.
-- [GraphQL](../graphql/README.md) - Flexible query language.
-- [Server-Sent Events](../server-sent-events/README.md) - Server push over HTTP.
+- [REST API](../rest-api/README.md) - HTTP-based API design
+- [WebSocket](../websocket/README.md) - Bidirectional persistent connection
+- [GraphQL](../graphql/README.md) - Flexible query language
+- [Server-Sent Events](../server-sent-events/README.md) - Server push over HTTP
+
+## References & Further Reading
+
+### Official Documentation
+- [gRPC Official Website](https://grpc.io/) - Main documentation hub
+- [gRPC Core Concepts](https://grpc.io/docs/what-is-grpc/core-concepts/) - Architecture and design
+- [Protocol Buffers Documentation](https://protobuf.dev/) - Protobuf language guide
+- [gRPC Language Guides](https://grpc.io/docs/languages/) - Implementation guides per language
+
+### Specifications
+- [HTTP/2 Specification (RFC 7540)](https://tools.ietf.org/html/rfc7540) - Underlying transport protocol
+- [gRPC over HTTP/2](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md) - Protocol details
+- [Protocol Buffers Language Specification](https://protobuf.dev/reference/protobuf/proto3-spec/) - Proto3 syntax
+
+### Books
+- *gRPC: Up and Running* by Kasun Indrasiri and Danesh Kuruppu
+- *Practical gRPC* by Joshua B. Humphries
+- *Building Microservices with gRPC* by Kasun Indrasiri
+
+### Architecture & Best Practices
+- [gRPC Best Practices](https://grpc.io/docs/guides/performance/) - Official performance guide
+- [Google Cloud gRPC Best Practices](https://cloud.google.com/apis/design/grpc) - Design patterns
+- [gRPC Load Balancing](https://grpc.io/blog/grpc-load-balancing/) - Load balancing strategies
+- [Error Handling in gRPC](https://grpc.io/docs/guides/error/) - Status codes and errors
+
+### Service Mesh & Production
+- [Istio Documentation](https://istio.io/latest/docs/) - Service mesh with gRPC support
+- [Linkerd gRPC Support](https://linkerd.io/2.14/features/protocol-detection/) - Lightweight service mesh
+- [Envoy Proxy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_protocols/grpc) - gRPC proxy and load balancer
+
+### Real-World Usage
+- [How Netflix Uses gRPC](https://netflixtechblog.com/practical-api-design-at-netflix-part-1-using-protobuf-fieldmask-35cfdc606518) - Netflix API design
+- [Uber's gRPC Migration](https://www.uber.com/blog/multitenancy-microservice-architecture/) - Microservices with gRPC
+- [Square's gRPC Adoption](https://developer.squareup.com/blog/grpc-at-square/) - Production experiences
+
+### Tools & Libraries
+- [grpcurl](https://github.com/fullstorydev/grpcurl) - Command-line tool like curl for gRPC
+- [BloomRPC](https://github.com/bloomrpc/bloomrpc) - GUI client for gRPC
+- [Evans](https://github.com/ktr0731/evans) - gRPC client with REPL
+- [Buf](https://buf.build/) - Modern protobuf and gRPC tooling
+- [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) - gRPC to REST proxy
+
+### Tutorials & Articles
+- [gRPC Basics Tutorial](https://grpc.io/docs/languages/go/basics/) - Getting started
+- [Introduction to gRPC](https://www.youtube.com/watch?v=RoXT_Rkg8LA) - Google I/O talk
+- [gRPC vs REST](https://kreya.app/blog/grpc-vs-rest/) - Detailed comparison

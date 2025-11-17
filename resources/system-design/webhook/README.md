@@ -439,42 +439,6 @@ if (await redis.get(`webhook:${deliveryId}`)) {
 await redis.setex(`webhook:${deliveryId}`, 86400, '1');
 ```
 
-## Common Interview Questions
-
-1. **How do you ensure webhook delivery reliability?**
-   - Retry with exponential backoff
-   - Queue-based async processing
-   - Dead letter queue for failures
-   - Idempotency keys
-   - Circuit breakers
-
-2. **How do you secure webhooks?**
-   - HMAC signature verification
-   - Timestamp validation (prevent replay)
-   - HTTPS only
-   - IP allowlisting
-   - Secrets management
-
-3. **How do you handle webhook failures?**
-   - Automatic retries (5-10 attempts)
-   - Exponential backoff
-   - Alert on repeated failures
-   - Disable endpoint after threshold
-   - Provide replay mechanism
-
-4. **Webhooks vs Polling?**
-   - Webhooks: Real-time, efficient, push-based
-   - Polling: Simpler, more reliable, pull-based
-   - Webhooks: Lower latency and bandwidth
-   - Polling: No endpoint management needed
-
-5. **How do you scale webhook delivery?**
-   - Queue-based architecture
-   - Worker pool for parallel delivery
-   - Rate limiting per endpoint
-   - Separate workers by priority
-   - Monitor and auto-scale workers
-
 ## Best Practices
 
 - Always use HTTPS for webhook URLs
@@ -517,9 +481,130 @@ await redis.setex(`webhook:${deliveryId}`, 86400, '1');
 - Missing idempotency handling
 - Not handling retries
 
+## Common Interview Questions
+
+1. **How do you ensure webhook delivery reliability?**
+   - Retry with exponential backoff
+   - Queue-based async processing
+   - Dead letter queue for failures
+   - Idempotency keys
+   - Circuit breakers
+
+2. **How do you secure webhooks?**
+   - HMAC signature verification
+   - Timestamp validation (prevent replay)
+   - HTTPS only
+   - IP allowlisting
+   - Secrets management
+
+3. **How do you handle webhook failures?**
+   - Automatic retries (5-10 attempts)
+   - Exponential backoff
+   - Alert on repeated failures
+   - Disable endpoint after threshold
+   - Provide replay mechanism
+
+4. **Webhooks vs Polling?**
+   - Webhooks: Real-time, efficient, push-based
+   - Polling: Simpler, more reliable, pull-based
+   - Webhooks: Lower latency and bandwidth
+   - Polling: No endpoint management needed
+
+5. **How do you scale webhook delivery?**
+   - Queue-based architecture
+   - Worker pool for parallel delivery
+   - Rate limiting per endpoint
+   - Separate workers by priority
+   - Monitor and auto-scale workers
+
+## Sources
+
+- [About webhooks](https://docs.github.com/en/webhooks/about-webhooks)
+
 ## Related Patterns
 
 - [REST API](../rest-api/README.md) - Request-response pattern
 - [Server-Sent Events](../server-sent-events/README.md) - Server push
 - [WebSocket](../websocket/README.md) - Bidirectional real-time
 - [Message Queue](https://en.wikipedia.org/wiki/Message_queue) - Async messaging
+
+## References & Further Reading
+
+### Standards & Specifications
+- [Webhooks (Web Hooks) History](https://webhooks.pbworks.com/w/page/13385124/FrontPage) - Original webhook concept
+- [REST Hooks](https://resthooks.org/) - Webhook patterns and best practices
+- [CloudEvents Specification](https://cloudevents.io/) - Standardized event format
+
+### Official Documentation
+- [GitHub Webhooks Documentation](https://docs.github.com/en/developers/webhooks-and-events/webhooks) - Comprehensive webhook implementation
+- [Stripe Webhooks Guide](https://stripe.com/docs/webhooks) - Payment webhooks best practices
+- [Slack Webhooks](https://api.slack.com/messaging/webhooks) - Incoming webhook integration
+- [Twilio Webhooks](https://www.twilio.com/docs/usage/webhooks) - Telephony webhook patterns
+- [SendGrid Event Webhook](https://docs.sendgrid.com/for-developers/tracking-events/event) - Email event webhooks
+
+### Security
+- [Webhook Security Best Practices](https://hookdeck.com/webhooks/guides/webhook-security-guide) - Comprehensive security guide
+- [Securing Webhooks](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/) - GitHub's security practices
+- [HMAC Signatures](https://www.okta.com/identity-101/hmac/) - Signature verification explained
+- [Webhook Signature Verification](https://stripe.com/docs/webhooks/signatures) - Stripe's approach
+
+### Architecture & Design
+- [Webhook Best Practices](https://hookdeck.com/webhooks/guides/webhook-best-practices) - Design patterns
+- [Building a Webhook System](https://blog.standardwebhooks.com/how-to-build-a-webhook-system/) - Architecture guide
+- [Webhook Delivery at Scale](https://www.svix.com/blog/scaling-webhooks/) - Scaling strategies
+- [Reliable Webhook Delivery](https://dev.to/stripe/designing-robust-and-predictable-apis-with-idempotency-1p3j) - Reliability patterns
+
+### Implementation Guides
+- [Building Webhooks with Node.js](https://www.twilio.com/blog/guide-node-js-webhooks) - Node.js tutorial
+- [Flask Webhooks Tutorial](https://hackersandslackers.com/flask-webhooks/) - Python implementation
+- [Django Webhooks](https://github.com/danihodovic/django-webhook) - Django library
+- [Go Webhook Implementation](https://github.com/go-playground/webhooks) - Go library
+
+### Webhook Platforms & Services
+- [Svix](https://www.svix.com/) - Webhooks as a service
+- [Hookdeck](https://hookdeck.com/) - Webhook infrastructure platform
+- [webhook.site](https://webhook.site/) - Webhook testing and debugging
+- [RequestBin](https://requestbin.com/) - Inspect HTTP requests
+- [ngrok](https://ngrok.com/) - Expose local servers for webhook testing
+
+### Retry & Reliability
+- [Exponential Backoff Algorithm](https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/) - AWS guide
+- [Idempotency in APIs](https://stripe.com/blog/idempotency) - Stripe's approach
+- [Circuit Breaker Pattern](https://martinfowler.com/bliki/CircuitBreaker.html) - Martin Fowler
+- [Dead Letter Queues](https://aws.amazon.com/blogs/compute/designing-durable-serverless-apps-with-dlqs-for-amazon-sns-amazon-sqs-aws-lambda/) - Failed delivery handling
+
+### Real-World Examples
+- [Shopify Webhooks](https://shopify.dev/api/admin-rest/2024-01/resources/webhook) - E-commerce webhooks
+- [PayPal IPN](https://developer.paypal.com/api/nvp-soap/ipn/) - Payment notifications
+- [Mailchimp Webhooks](https://mailchimp.com/developer/marketing/guides/sync-audience-data-with-webhooks/) - Email marketing webhooks
+- [Discord Webhooks](https://discord.com/developers/docs/resources/webhook) - Chat integration
+- [Salesforce Outbound Messages](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_om_outboundmessaging_understanding.htm) - CRM webhooks
+
+### Articles & Tutorials
+- [What Are Webhooks?](https://www.redhat.com/en/topics/automation/what-is-a-webhook) - Red Hat introduction
+- [Webhooks Guide](https://sendgrid.com/blog/webhook-vs-api-whats-difference/) - SendGrid comparison
+- [Webhooks vs WebSockets](https://ably.com/topic/webhooks-vs-websockets) - When to use each
+- [Designing Webhook Systems](https://verygoodsecurity.com/blog/posts/how-to-design-and-implement-webhook-systems) - System design
+
+### Standards & Formats
+- [Standard Webhooks](https://www.standardwebhooks.com/) - Webhook standardization initiative
+- [JSON Schema](https://json-schema.org/) - Payload validation
+- [OpenAPI Callbacks](https://swagger.io/docs/specification/callbacks/) - Documenting webhooks in OpenAPI
+
+### Testing & Debugging Tools
+- [Postman](https://www.postman.com/) - API and webhook testing
+- [Insomnia](https://insomnia.rest/) - REST client with webhook support
+- [cURL](https://curl.se/) - Command-line HTTP testing
+- [HTTPie](https://httpie.io/) - User-friendly HTTP client
+- [Beeceptor](https://beeceptor.com/) - Mock webhook receiver
+
+### Books & Long-Form Content
+- *APIs You Won't Hate* by Phil Sturgeon (webhook chapter)
+- *Designing Event-Driven Systems* by Ben Stopford (event patterns)
+- [Webhook Integration Patterns](https://www.enterpriseintegrationpatterns.com/) - Integration patterns
+
+### Message Queues (for Webhook Processing)
+- [RabbitMQ Documentation](https://www.rabbitmq.com/documentation.html) - Message broker
+- [Apache Kafka](https://kafka.apache.org/documentation/) - Event streaming
+- [AWS SQS](https://aws.amazon.com/sqs/) - Message queue service
+- [Redis Pub/Sub](https://redis.io/docs/interact/pubsub/) - Lightweight messaging

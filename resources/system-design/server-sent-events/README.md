@@ -428,3 +428,62 @@ Solution:
 - [REST API](../rest-api/README.md) - Request-response pattern
 - [Webhooks](../webhook/README.md) - Event-driven callbacks
 - [Long Polling](https://en.wikipedia.org/wiki/Push_technology#Long_polling) - Alternative push method
+
+## References & Further Reading
+
+### Specifications
+- [Server-Sent Events (W3C)](https://html.spec.whatwg.org/multipage/server-sent-events.html) - Official SSE specification
+- [EventSource API (W3C)](https://html.spec.whatwg.org/multipage/server-sent-events.html#the-eventsource-interface) - Browser API standard
+- [MIME Type text/event-stream](https://www.iana.org/assignments/media-types/text/event-stream) - SSE content type
+
+### Official Documentation
+- [MDN Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events) - Comprehensive browser guide
+- [MDN EventSource API](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) - API reference
+- [Using Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events) - MDN tutorial
+
+### Implementation Guides
+- [Node.js SSE Guide](https://nodejs.org/en/learn/modules/anatomy-of-an-http-transaction) - Building SSE in Node.js
+- [Express SSE Middleware](https://www.npmjs.com/package/express-sse) - Express integration
+- [Flask-SSE](https://flask-sse.readthedocs.io/) - Python/Flask implementation
+- [Spring WebFlux SSE](https://docs.spring.io/spring-framework/reference/web/webflux/reactive-spring.html#webflux-sse) - Java implementation
+
+### Articles & Tutorials
+- [Stream Updates with Server-Sent Events](https://web.dev/eventsource-basics/) - Web.dev guide
+- [Server-Sent Events: The Alternative to WebSocket](https://germano.dev/sse-websockets/) - Comparison and use cases
+- [Real-Time Communication with SSE](https://www.smashingmagazine.com/2018/02/sse-websockets-data-flow-http2/) - Smashing Magazine
+- [Building Real-Time Apps with SSE](https://www.youtube.com/watch?v=4HlNv1qpZFY) - Video tutorial
+
+### Architecture & Scaling
+- [Scaling Server-Sent Events](https://ably.com/topic/server-sent-events) - Ably's SSE guide
+- [Redis Pub/Sub with SSE](https://redis.io/docs/interact/pubsub/) - Using Redis for SSE scaling
+- [Load Balancing SSE](https://www.haproxy.com/blog/websockets-load-balancing-with-haproxy) - HAProxy SSE configuration
+- [NGINX SSE Configuration](https://www.nginx.com/blog/nginx-nodejs-websockets-socketio/) - Proxy setup
+
+### Comparison Articles
+- [SSE vs WebSocket vs Polling](https://ably.com/blog/websockets-vs-long-polling) - Detailed comparison
+- [When to Use Server-Sent Events](https://germano.dev/sse-websockets/) - Decision guide
+- [Real-Time Technologies Compared](https://rxdb.info/articles/websockets-sse-polling-webrtc-webtransport.html) - Comprehensive comparison
+
+### Browser Compatibility
+- [Can I Use: Server-Sent Events](https://caniuse.com/eventsource) - Browser support matrix
+- [EventSource Polyfill](https://github.com/Yaffle/EventSource) - Polyfill for older browsers
+
+### Real-World Examples
+- [Mercure Hub](https://mercure.rocks/) - SSE-based pub/sub system
+- [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) - Uses SSE for web push
+- [OpenAI Streaming](https://platform.openai.com/docs/api-reference/streaming) - ChatGPT streaming with SSE
+
+### Libraries & Tools
+- [express-sse](https://www.npmjs.com/package/express-sse) - Node.js/Express SSE
+- [sse-channel](https://github.com/rexxars/sse-channel) - SSE server implementation
+- [EventSource (npm)](https://www.npmjs.com/package/eventsource) - Node.js EventSource client
+- [Server-Sent Events Client (Go)](https://github.com/r3labs/sse) - Go SSE client
+
+### Testing & Debugging
+- [SSE Test Server](https://sse.dev/) - Online SSE testing tool
+- [Chrome DevTools Network](https://developer.chrome.com/docs/devtools/network/) - Debugging SSE connections
+- [curl for SSE](https://curl.se/) - Testing SSE endpoints with curl
+
+### Standards & Protocols
+- [HTTP/1.1 Chunked Transfer Encoding](https://tools.ietf.org/html/rfc7230#section-4.1) - Underlying mechanism
+- [CORS for SSE](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) - Cross-origin SSE
