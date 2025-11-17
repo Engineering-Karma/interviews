@@ -116,39 +116,39 @@ subscription OnPostCreated {
 ## Architecture Diagram
 
 ```
-┌─────────────────────────────────────────────┐
-│              Client                         │
-│  ┌──────────────────────────────────────┐   │
-│  │  GraphQL Query                       │   │
-│  │  {                                   │   │
-│  │    user(id: "123") {                 │   │
-│  │      name                            │   │
-│  │      posts { title }                 │   │
-│  │    }                                 │   │
-│  │  }                                   │   │
-│  └──────────────────────────────────────┘   │
-└───────────────────┬─────────────────────────┘
-                    │
-                    ▼
-┌─────────────────────────────────────────────┐
-│         GraphQL Server                      │
-│  ┌──────────────────────────────────────┐   │
-│  │  Query Parser & Validator            │   │
-│  └──────────┬───────────────────────────┘   │
-│             ▼                               │
-│  ┌──────────────────────────────────────┐   │
-│  │  Resolver Functions                  │   │
-│  │  - userResolver()                    │   │
-│  │  - postsResolver()                   │   │
-│  └──────────┬───────────────────────────┘   │
-└─────────────┼───────────────────────────────┘
-              │
-    ┌─────────┴──────────┐
-    ▼                    ▼
-┌──────────┐      ┌───────────────┐
-│ Database │      │ REST APIs     │
-│          │      │ Microservices │
-└──────────┘      └───────────────┘
+┌──────────────────────────────────┐
+│              Client              │
+│  ┌────────────────────────────┐  │
+│  │  GraphQL Query             │  │
+│  │  {                         │  │
+│  │    user(id: "123") {       │  │
+│  │      name                  │  │
+│  │      posts { title }       │  │
+│  │    }                       │  │
+│  │  }                         │  │
+│  └────────────────────────────┘  │
+└────────────────┬─────────────────┘
+                 │
+                 ▼
+┌──────────────────────────────────┐
+│         GraphQL Server           │
+│  ┌────────────────────────────┐  │
+│  │  Query Parser & Validator  │  │
+│  └─────────────┬──────────────┘  │
+│                ▼                 │
+│  ┌────────────────────────────┐  │
+│  │  Resolver Functions        │  │
+│  │  - userResolver()          │  │
+│  │  - postsResolver()         │  │
+│  └─────────────┬──────────────┘  │
+└────────────────┼─────────────────┘
+                 │
+       ┌─────────┴──────────┐
+       ▼                    ▼
+ ┌──────────┐      ┌───────────────┐
+ │ Database │      │ REST APIs     │
+ │          │      │ Microservices │
+ └──────────┘      └───────────────┘
 ```
 
 ## Resolver Pattern
@@ -395,20 +395,17 @@ const client = new ApolloClient({
 - **Timeout handling** - Set resolver timeouts.
 
 ## GraphQL vs REST
-```
-|----------------|------------------|-----------------------|
-| Aspect         | GraphQL          | REST                  |
-|----------------|------------------|-----------------------|
-| Endpoints      | Single           | Multiple              |
-| Data fetching  | Exact fields     | Fixed structure       |
-| Versioning     | Schema evolution | URL/header versioning |
-| Caching        | Complex          | HTTP caching          |
-| Learning curve | Steep            | Easy                  |
-| Tooling        | Growing          | Mature                |
-| Over-fetching  | No               | Yes                   |
-| Type system    | Built-in         | External (OpenAPI)    |
-|----------------|------------------|-----------------------|
-```
+
+| Aspect | GraphQL | REST |
+|--------|---------|------|
+| Endpoints | Single | Multiple |
+| Data fetching | Exact fields | Fixed structure |
+| Versioning | Schema evolution | URL/header versioning |
+| Caching | Complex | HTTP caching |
+| Learning curve | Steep | Easy |
+| Tooling | Growing | Mature |
+| Over-fetching | No | Yes |
+| Type system | Built-in | External (OpenAPI) |
 
 ## Common Interview Questions
 
@@ -500,17 +497,13 @@ union SearchResult = User | Post | Comment
 
 ## Trade-offs
 
-```
-|----------------|------------------------------------|-------------------------------------|
-| Aspect         | Advantage                          | Disadvantage                        |
-|----------------|------------------------------------|-------------------------------------|
-| Flexibility    | Client gets exactly what it needs. | More complex than REST.             |
-| Performance    | Reduces API calls.                 | Can be slower without optimization. |
-| Type safety    | Strong schema validation.          | Requires schema design effort.      |
-| Caching        | Fine-grained control.              | HTTP caching not automatic.         |
-| Learning curve | Powerful once learned.             | Steeper than REST.                  |
-|----------------|------------------------------------|-------------------------------------|
-```
+| Aspect | Advantage | Disadvantage |
+|--------|-----------|--------------|
+| Flexibility | Client gets exactly what it needs | More complex than REST |
+| Performance | Reduces API calls | Can be slower without optimization |
+| Type safety | Strong schema validation | Requires schema design effort |
+| Caching | Fine-grained control | HTTP caching not automatic |
+| Learning curve | Powerful once learned | Steeper than REST |
 
 ## Related Patterns
 

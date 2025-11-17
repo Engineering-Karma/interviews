@@ -14,28 +14,26 @@ REST (Representational State Transfer) is an architectural style for designing n
 
 ## HTTP Methods
 
-```
-|---------|--------------------------|------------|------|
-| Method  | Purpose                  | Idempotent | Safe |
-|---------|--------------------------|------------|------|
-| GET     | Retrieve resource.       | Yes        | Yes  |
-| POST    | Create resource.         | No         | No   |
-| PUT     | Update/Replace resource. | Yes        | No   |
-| PATCH   | Partial update.          | No         | No   |
-| DELETE  | Remove resource.         | Yes        | No   |
-| HEAD    | Get metadata only.       | Yes        | Yes  |
-| OPTIONS | Get supported methods.   | Yes        | Yes  |
-|---------|--------------------------|------------|------|
-```
+| Method  | Purpose | Idempotent | Safe |
+|---------|---------|------------|------|
+| GET | Retrieve resource | Yes | Yes |
+| POST | Create resource | No | No |
+| PUT | Update/Replace resource | Yes | No |
+| PATCH | Partial update | No | No |
+| DELETE | Remove resource | Yes | No |
+| HEAD | Get metadata only | Yes | Yes |
+| OPTIONS | Get supported methods | Yes | Yes |
 
 ## Status Codes
 
 ### Success (2xx)
+
 - **200 OK** - Request succeeded.
 - **201 Created** - Resource created successfully.
 - **204 No Content** - Success with no response body.
 
 ### Client Errors (4xx)
+
 - **400 Bad Request** - Invalid request format.
 - **401 Unauthorized** - Authentication required.
 - **403 Forbidden** - Authenticated but not authorized.
@@ -43,6 +41,7 @@ REST (Representational State Transfer) is an architectural style for designing n
 - **429 Too Many Requests** - Rate limit exceeded.
 
 ### Server Errors (5xx)
+
 - **500 Internal Server Error** - Generic server error.
 - **502 Bad Gateway** - Invalid response from upstream.
 - **503 Service Unavailable** - Temporary overload/maintenance.
@@ -230,16 +229,12 @@ GET /users?status=active&role=admin&sort=-created_at,name
 
 ## Trade-offs
 
-```
-|---------------|-----------------------------------|-------------------------------------|
-| Aspect        | Advantage                         | Disadvantage                        |
-|---------------|-----------------------------------|-------------------------------------|
-| Simplicity    | Easy to understand and implement. | Can be verbose for complex queries. |
-| Caching       | HTTP caching well-understood.     | Cache invalidation can be complex.  |
-| Tooling       | Extensive tooling support.        | No built-in schema validation.      |
-| Over-fetching | Fixed endpoints.                  | May need multiple requests.         |
-|---------------|-----------------------------------|-------------------------------------|
-```
+| Aspect | Advantage | Disadvantage |
+|--------|-----------|--------------|
+| Simplicity | Easy to understand and implement | Can be verbose for complex queries |
+| Caching | HTTP caching well-understood | Cache invalidation can be complex |
+| Tooling | Extensive tooling support | No built-in schema validation |
+| Over-fetching | Fixed endpoints | May need multiple requests |
 
 ## Related Patterns
 
