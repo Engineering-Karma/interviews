@@ -101,9 +101,9 @@ message ListUsersRequest {
 └──────────────┘              └──────┬───────┘
                                      │
                                      ▼
-                              ┌─────────────┐
-                              │  Database   │
-                              └─────────────┘
+                              ┌──────────────┐
+                              │   Database   │
+                              └──────────────┘
 ```
 
 ## gRPC vs REST vs GraphQL
@@ -186,11 +186,11 @@ message ErrorDetail {
 ### 1. Proxy Load Balancing
 
 ```
-         ┌─────────┐
-         │   LB    │
-         └────┬────┘
-    ┌─────────┼─────────┐
-    ▼         ▼         ▼
+           ┌────────┐
+           │   LB   │
+           └────┬───┘
+      ┌─────────┼────────┐
+      ▼         ▼        ▼
 ┌────────┐ ┌────────┐ ┌────────┐
 │Server 1│ │Server 2│ │Server 3│
 └────────┘ └────────┘ └────────┘
@@ -342,39 +342,6 @@ message User {
 }
 ```
 
-## Common Interview Questions
-
-1. **How does gRPC achieve high performance?**
-   - Binary serialization (Protocol Buffers).
-   - HTTP/2 multiplexing and compression.
-   - Connection reuse.
-   - Efficient encoding/decoding.
-
-2. **When would you choose gRPC over REST?**
-   - Microservices internal communication.
-   - Need for streaming.
-   - Performance-critical applications.
-   - Strong typing requirements.
-   - Polyglot environment.
-
-3. **How do you handle versioning in gRPC?**
-   - Add new methods/services.
-   - Use optional fields.
-   - Maintain backward compatibility.
-   - Deprecated fields with comments.
-
-4. **How do you implement authentication in gRPC?**
-   - Metadata with JWT tokens.
-   - Interceptors for validation.
-   - TLS for transport security.
-   - mTLS for mutual authentication.
-
-5. **How do you handle load balancing in gRPC?**
-   - Client-side LB with resolver.
-   - Proxy-based LB (L4/L7).
-   - Service mesh (Istio, Linkerd).
-   - Round-robin, least-connection algorithms.
-
 ## Best Practices
 
 - Use semantic versioning for .proto files.
@@ -416,6 +383,39 @@ message User {
 - **Logging** - Structured logs with request context.
 - **Health checks** - Implement health service.
 - **Interceptors** - Add observability at middleware layer.
+
+## Common Interview Questions
+
+1. **How does gRPC achieve high performance?**
+   - Binary serialization (Protocol Buffers).
+   - HTTP/2 multiplexing and compression.
+   - Connection reuse.
+   - Efficient encoding/decoding.
+
+2. **When would you choose gRPC over REST?**
+   - Microservices internal communication.
+   - Need for streaming.
+   - Performance-critical applications.
+   - Strong typing requirements.
+   - Polyglot environment.
+
+3. **How do you handle versioning in gRPC?**
+   - Add new methods/services.
+   - Use optional fields.
+   - Maintain backward compatibility.
+   - Deprecated fields with comments.
+
+4. **How do you implement authentication in gRPC?**
+   - Metadata with JWT tokens.
+   - Interceptors for validation.
+   - TLS for transport security.
+   - mTLS for mutual authentication.
+
+5. **How do you handle load balancing in gRPC?**
+   - Client-side LB with resolver.
+   - Proxy-based LB (L4/L7).
+   - Service mesh (Istio, Linkerd).
+   - Round-robin, least-connection algorithms.
 
 ## Related Patterns
 

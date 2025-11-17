@@ -407,37 +407,6 @@ const client = new ApolloClient({
 | Over-fetching | No | Yes |
 | Type system | Built-in | External (OpenAPI) |
 
-## Common Interview Questions
-
-1. **What problem does GraphQL solve?**
-   - Over-fetching and under-fetching.
-   - Multiple round trips.
-   - API versioning challenges.
-   - Flexible data requirements.
-
-2. **How do you handle the N+1 problem?**
-   - DataLoader for batching.
-   - Batch queries at database level.
-   - Optimize resolvers.
-   - Monitor query performance.
-
-3. **How do you scale GraphQL APIs?**
-   - Query complexity limits.
-   - Horizontal scaling of servers.
-   - Caching at multiple layers.
-   - DataLoader for batching.
-   - CDN for GET queries.
-
-4. **GraphQL vs REST - when to use each?**
-   - GraphQL: Complex nested data, multiple clients.
-   - REST: Simple CRUD, HTTP caching important.
-
-5. **How do you handle authentication/authorization?**
-   - Auth tokens in headers.
-   - Context object with user info.
-   - Field-level authorization in resolvers.
-   - Directive-based permissions.
-
 ## Best Practices
 
 - Design schema first, not database-driven.
@@ -504,6 +473,37 @@ union SearchResult = User | Post | Comment
 | Type safety | Strong schema validation | Requires schema design effort |
 | Caching | Fine-grained control | HTTP caching not automatic |
 | Learning curve | Powerful once learned | Steeper than REST |
+
+## Common Interview Questions
+
+1. **What problem does GraphQL solve?**
+   - Over-fetching and under-fetching.
+   - Multiple round trips.
+   - API versioning challenges.
+   - Flexible data requirements.
+
+2. **How do you handle the N+1 problem?**
+   - DataLoader for batching.
+   - Batch queries at database level.
+   - Optimize resolvers.
+   - Monitor query performance.
+
+3. **How do you scale GraphQL APIs?**
+   - Query complexity limits.
+   - Horizontal scaling of servers.
+   - Caching at multiple layers.
+   - DataLoader for batching.
+   - CDN for GET queries.
+
+4. **GraphQL vs REST - when to use each?**
+   - GraphQL: Complex nested data, multiple clients.
+   - REST: Simple CRUD, HTTP caching important.
+
+5. **How do you handle authentication/authorization?**
+   - Auth tokens in headers.
+   - Context object with user info.
+   - Field-level authorization in resolvers.
+   - Directive-based permissions.
 
 ## Related Patterns
 

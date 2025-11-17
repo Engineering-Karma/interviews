@@ -192,6 +192,26 @@ GET /users?status=active&role=admin&sort=-created_at,name
 - Implement **health check endpoints**.
 - Use **timeouts** appropriately.
 
+## Best Practices
+
+- Use nouns for resources, not verbs.
+- Return appropriate status codes.
+- Use plural names for collections (`/users`, not `/user`).
+- Implement HATEOAS for discoverability (optional).
+- Document your API (OpenAPI/Swagger).
+- Use consistent naming conventions (snake_case or camelCase).
+- Include request IDs for tracing.
+- Version your API from day one.
+
+## Trade-offs
+
+| Aspect | Advantage | Disadvantage |
+|--------|-----------|--------------|
+| Simplicity | Easy to understand and implement | Can be verbose for complex queries |
+| Caching | HTTP caching well-understood | Cache invalidation can be complex |
+| Tooling | Extensive tooling support | No built-in schema validation |
+| Over-fetching | Fixed endpoints | May need multiple requests |
+
 ## Common Interview Questions
 
 1. **How would you design a RESTful API for [X system]?**
@@ -215,26 +235,6 @@ GET /users?status=active&role=admin&sort=-created_at,name
    - Additive changes only.
    - Deprecation notices.
    - Support multiple versions simultaneously.
-
-## Best Practices
-
-- Use nouns for resources, not verbs.
-- Return appropriate status codes.
-- Use plural names for collections (`/users`, not `/user`).
-- Implement HATEOAS for discoverability (optional).
-- Document your API (OpenAPI/Swagger).
-- Use consistent naming conventions (snake_case or camelCase).
-- Include request IDs for tracing.
-- Version your API from day one.
-
-## Trade-offs
-
-| Aspect | Advantage | Disadvantage |
-|--------|-----------|--------------|
-| Simplicity | Easy to understand and implement | Can be verbose for complex queries |
-| Caching | HTTP caching well-understood | Cache invalidation can be complex |
-| Tooling | Extensive tooling support | No built-in schema validation |
-| Over-fetching | Fixed endpoints | May need multiple requests |
 
 ## Related Patterns
 
